@@ -1,0 +1,44 @@
+.site-logo a {
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+    color: #e6fffa;
+    text-shadow: 3px 3px black;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    background-color: var(--color-teal-dark);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    /* margin-left: auto; */
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin: 0px 12px;
+}
+
+nav a {
+    color: var(--color-teal-light);
+    font-size: 20px;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: var(--color-teal-medium);
+    /* border-bottom: 5px solid var(--color-teal-light); */
+    transition: all 200ms;
+}

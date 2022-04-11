@@ -1,0 +1,7 @@
+:host {
+    background-color: var(--color-teal-dark);
+    color: var(--color-teal-light);
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+}

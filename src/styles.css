@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@400;500;600&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.10.2/css/all.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  font-size: 20px;
+}
+
+
+:root {
+  --color-teal-dark: #234e52;
+  --color-teal-light: #e6fffa;
+  --color-teal-medium: #4fd1c5;
+  --color-beige: #f1ece5;
+  --color-gray: #605e5c;
+  --color-gray-light: #e6e5e4;
+  --color-orange: #b54829;
+  --section-padding-x: 180px;
+  --section-padding: 48px var(--section-padding-x);
+  --section-padding-sm: 48px 120px;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+}
