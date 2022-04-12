@@ -7,7 +7,6 @@
 *::after {
   box-sizing: border-box;
   margin: 0px;
-  font-size: 20px;
 }
 
 
@@ -26,10 +25,27 @@
 
 html {
   font-family: "Lato", sans-serif;
+  font-size: 20px;
 }
 
 h1,
 h2,
 h3 {
   font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--color-teal-dark);
+  font-family: "Montserrat", sans-serif;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  margin: 1rem auto;
+  width: 11rem;
+  border-top: 8px solid var(--color-orange);
 }

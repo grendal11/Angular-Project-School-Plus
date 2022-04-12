@@ -5,7 +5,10 @@
 }
 
 main {
+    width: 100%;
+    text-align: center;
     flex-grow: 1;
     padding: 20px;
+    padding-top: 2rem;
     margin: auto;
 }
