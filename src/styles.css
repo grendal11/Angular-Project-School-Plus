@@ -21,6 +21,9 @@
   --section-padding-x: 180px;
   --section-padding: 48px var(--section-padding-x);
   --section-padding-sm: 48px 120px;
+  --box-shadow: 0px 0px 15px 5px var(--color-teal-dark);
+  --border-radius-big: 15px;
+  --border-radius-small: 5px;
 }
 
 html {

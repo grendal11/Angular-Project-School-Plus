@@ -1,0 +1,84 @@
+form {
+    width: 600px;
+    margin: 2em auto 0;
+    text-align: center;
+    border-radius: var(--border-radius-big);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
+
+form * {
+    font-size: 1rem;
+}
+
+p {
+    padding-bottom: 0;
+    padding-top: 1.5rem;
+}
+
+input {
+    flex: 0 1 100%;
+    border: 1px solid var(--color-teal-dark);
+    padding: 0.3em;
+    border-left: 0.3em solid var(--color-teal-dark);
+    border-top-right-radius:var(--border-radius-small);
+    border-bottom-right-radius:var(--border-radius-small);
+}
+
+button {
+    color: var(--color-teal-light);
+    background-color: var(--color-teal-dark);
+    border: none;
+    border-radius: var(--border-radius-small);
+    padding: 0.6em 1.2em;
+    margin-top: 1.5rem;
+    width: 200px;
+    outline: none;
+    cursor: pointer;
+}
+
+i {
+    border: 1px solid;
+    border-right: none;
+    padding: 0.55em;
+    border-top-left-radius: var(--border-radius-small);
+    border-bottom-left-radius: var(--border-radius-small);
+    background-color: #e9ecef;
+}
+
+a {
+    color: var(--color-orange);
+    font-weight: bold;
+    text-decoration: none;
+    font-style: italic;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.register .tel {
+    padding-right: 0.8em;
+}
+
+.login .field, .register .field {
+    display: flex;
+    padding-bottom: 0;
+}
+
+/* errors  */
+
+p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 4px;
+}
+
+.input-error {
+    border-left-color: red;
+}
+
+.disabled:hover {
+    cursor:not-allowed;
+}
