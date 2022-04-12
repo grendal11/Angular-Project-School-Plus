@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
+import { CreateUserDto } from 'src/app/core/services/user.service';
 import { emailValidator, passwordMatch } from '../util';
 
 @Component({
@@ -29,45 +31,31 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder, 
-    // private authService: AuthService, 
+    private authService: AuthService, 
     private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  // shouldShowErrorForControl(controlName: string, sourceGroup: FormGroup = this.registerFormGroup) {
-  //   return sourceGroup.controls[controlName].touched && sourceGroup.controls[controlName].invalid
-  // }
 
   handleRegister(): void {
     // console.log(this.registerFormGroup.value);
  
-    // const {username, email, passwords, tel, telRegion} = this.registerFormGroup.value;
+    const {username, email, passwords, tel} = this.registerFormGroup.value;
 
-    // const body: CreateUserDto = {
-    //   username: username,
-    //   email: email,
-    //   password: passwords.password,
-    //   ...(!!tel && {tel: telRegion + tel})         
-    // };
+    const body: CreateUserDto = {
+      username: username,
+      email: email,
+      password: passwords.password,
+      ...(!!tel && {tel: tel})         
+    };
 
     // console.log(body);
 
-    // this.authService.register$(body).subscribe(() => {
-    //   this.router.navigate(['/home']);
-    // });
+    this.authService.register$(body).subscribe(() => {
+      this.router.navigate(['/home']);
+    });
     
-
-    // const body: {[key: string]: string} = {
-    //   username: username,
-    //   email: email,
-    //   password: passwords.password
-    // };
-
-    // if (tel) {
-    //   body.tel = tel;
-    // }
-
   }
 
 }

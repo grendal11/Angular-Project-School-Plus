@@ -11,10 +11,10 @@
         <ng-container *ngIf="registerFormGroup.controls['username'].touched && registerFormGroup.controls['username'].invalid">
             <!-- {{registerFormGroup.controls['username'].errors | json}} -->
              <p *ngIf="registerFormGroup.controls['username'].errors?.required" class="error">
-                 Username is required!
+                Полето е задължително!
              </p>
              <p *ngIf="registerFormGroup.controls['username'].errors?.minlength" class="error">
-                 Username must be at least 5 characters!
+                Името трябва да е поне 5 символа!
              </p>
          </ng-container>
 
@@ -23,19 +23,17 @@
         <p class="field field-icon">
             <label for="email"><span><i class="fas fa-envelope"></i></span></label>
             <input [class.input-error]="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid" formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com" [class.input-error]="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
-            <!-- <input formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com"
-            [class.input-error]="shouldShowErrorForControl('email')"> -->
         </p>
 
         <ng-container *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
          
             <!-- {{registerFormGroup.controls['email'].errors | json}} -->
             <p *ngIf="registerFormGroup.controls['email'].errors?.required" class="error">
-                Email is required!
+                Полето е задължително!
             </p>
           
             <p *ngIf="registerFormGroup.controls['email'].errors?.email" class="error">
-                Email is not valid!
+                Email адресът е невалиден!
             </p>
         </ng-container>
 
@@ -55,13 +53,13 @@
 
             <ng-container *ngIf="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid">
                 <p *ngIf="passwordsGroup.controls['password'].errors?.required" class="error">
-                    Password is required!
+                    Полето е задължително!
                 </p>
                 <p *ngIf="passwordsGroup.controls['password'].errors?.minlength" class="error">
-                    Password must be at least 5 characters!
+                    Паролата трябва да е поне 5 символа!
                 </p> 
                 <p *ngIf="passwordsGroup.controls['password'].errors?.pattern" class="error">
-                    Password must "contains only english letters and numbers"!
+                    Паролата трябва да съдържа само латински букви и цифри!
                 </p>
             </ng-container>
 
@@ -73,12 +71,12 @@
 
             <ng-container *ngIf="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid">
                 <p class="error">
-                    Repeat Password does not match password!
+                    Двете пароли не съвпадат!
                 </p>
             </ng-container>
         </div>
 
-        <button [disabled]="registerFormGroup.invalid">Create Account</button>
+        <button [disabled]="registerFormGroup.invalid" [class.disabled]="registerFormGroup.invalid">Create Account</button>
 
         <p class="text-center">
             Вече имате регистрация?

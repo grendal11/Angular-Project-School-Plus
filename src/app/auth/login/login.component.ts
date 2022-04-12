@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
+import { MessageBusService, MessageType } from 'src/app/core/services/message-bus.service';
 import { emailValidator } from '../util';
 
 @Component({
@@ -19,38 +21,37 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    // private authService: AuthService,
-    // private activatedRoute: ActivatedRoute,
-    // private messageBus: MessageBusService,
+    private authService: AuthService,
+    private activatedRoute: ActivatedRoute,
+    private messageBus: MessageBusService,
     private router: Router) { }
 
   ngOnInit(): void {
   }
 
   handleLogin(): void {
-  //   // console.log("form must be submited");
-  //   this.errorMessage = '';
-  //   this.authService.login$(this.loginFormGroup.value).subscribe(() => {
-  //     this.router.navigate(['/home']);
-  //   });
-  //   this.authService.login$(this.loginFormGroup.value).subscribe({
-  //     next: () => {
-  //       if (this.activatedRoute.snapshot.queryParams['redirect-to']) {
-  //         this.router.navigateByUrl(this.activatedRoute.snapshot.queryParams['redirect-to']);
-  //       } else {
-  //         this.router.navigate(['/home']);
-  //       }
+    this.errorMessage = '';
+    // this.authService.login$(this.loginFormGroup.value).subscribe(() => {
+    //   this.router.navigate(['/home']);
+    // });
+    this.authService.login$(this.loginFormGroup.value).subscribe({
+      next: () => {
+        if (this.activatedRoute.snapshot.queryParams['redirect-to']) {
+          this.router.navigateByUrl(this.activatedRoute.snapshot.queryParams['redirect-to']);
+        } else {
+          this.router.navigate(['/home']);
+        }
 
-  //       this.messageBus.notifyForMessage({text: 'User successfully logged in!', type: MessageType.Success});
-  //     },
-  //     complete: () => {
-  //       console.log('login stream completed');
-  //     },
-  //     error: (err) => {
-  //       // console.log(err);
-  //       this.errorMessage = err.error.message;
-  //     }
-  //   });
+        this.messageBus.notifyForMessage({text: 'User successfully logged in!', type: MessageType.Success});
+      },
+      complete: () => {
+        console.log('login stream completed');
+      },
+      error: (err) => {
+        // console.log(err);
+        this.errorMessage = err.error.message;
+      }
+    });
   }
 
 }

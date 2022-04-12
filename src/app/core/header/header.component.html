@@ -3,12 +3,20 @@
     <div class="navigation">
         <ul class="left-nav">
             <li><a routerLink="/">Събития</a></li>
-            <li><a routerLink="/">Ново събитие</a></li>
+            <li *ngIf="(isLoggedIn$ | async)"><a routerLink="/">Ново събитие</a></li>
         </ul>
         <ul class="right-nav">
-            <li><a routerLink="/profile">Профил</a></li>
-            <li><a routerLink="/login">Вход</a></li>
-            <li><a routerLink="/register">Регистрация</a></li>
+            <li *ngIf="(isLoggedIn$ | async)"><a routerLink="/profile">
+                    <i *ngIf="(isLoggedIn$ | async)?.role == 'student'" class="fa-solid fa-user-large"></i>
+                    <i *ngIf="(isLoggedIn$ | async)?.role == 'teacher'" class="fa-solid fa-user-graduate"></i>
+                    <i *ngIf="!(isLoggedIn$ | async).role" class="fa-solid fa-user-large-slash"></i>
+                    {{(currentUser$ | async).username }}
+                </a></li>
+            <li *ngIf="!(isLoggedIn$ | async)"><a routerLink="/login">Вход</a></li>
+            <li *ngIf="!(isLoggedIn$ | async)"><a routerLink="/register">Регистрация</a></li>
+            <li *ngIf="(isLoggedIn$ | async)">
+                <a href="javascript:void(0);" (click)="logoutHandler()">Изход</a>
+            </li>
         </ul>
     </div>
 </nav>

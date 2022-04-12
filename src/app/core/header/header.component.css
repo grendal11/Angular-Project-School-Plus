@@ -30,7 +30,7 @@ li {
     margin: 0px 12px;
 }
 
-nav a {
+nav a, i {
     color: var(--color-teal-light);
     font-size: 20px;
     text-decoration: none;

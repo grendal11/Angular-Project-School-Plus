@@ -12,11 +12,11 @@
         <ng-container *ngIf="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
             <!-- {{loginFormGroup.controls['email'].errors | json}} -->
             <p *ngIf="loginFormGroup.controls['email'].errors?.required" class="error">
-                Email is required!
+                Полето е задължително!
             </p>
 
             <p *ngIf="loginFormGroup.controls['email'].errors?.email" class="error">
-                  Email is not valid!
+                  Email адресът е невалиден!
             </p>
         </ng-container>
 
@@ -27,10 +27,10 @@
         <ng-container *ngIf="loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid">
             <!-- {{loginFormGroup.controls['password'].errors | json}} -->
             <p *ngIf="loginFormGroup.controls['password'].errors?.required" class="error">
-                Password is required!
+                Полето е задължително!
             </p>
             <p *ngIf="loginFormGroup.controls['password'].errors?.minlength" class="error">
-                Password must be at least 5 characters!
+                Паролата трябва да е поне 5 символа!
             </p>
         </ng-container>
 

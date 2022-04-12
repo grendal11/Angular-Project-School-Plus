@@ -4,12 +4,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,//
-    "strict": false,//
-    "noImplicitOverride": true,//
-    "noPropertyAccessFromIndexSignature": false,//
-    "noImplicitReturns": false,//
-    "noFallthroughCasesInSwitch": true,//
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
