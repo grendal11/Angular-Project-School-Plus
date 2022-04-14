@@ -6,6 +6,8 @@ import { EventsPageComponent } from './events-page/events-page.component';
 import { EventsRoutingModule } from './events-routing.module';
 import { FormsModule } from '@angular/forms';
 import { EventsNewPageComponent } from './events-new-page/events-new-page.component';
+import { EventListComponent } from './event-list/event-list.component';
+import { EventListItemComponent } from './event-list-item/event-list-item.component';
 
 
 
@@ -13,7 +15,9 @@ import { EventsNewPageComponent } from './events-new-page/events-new-page.compon
   declarations: [
     EventsDetailPageComponent,
     EventsPageComponent,
-    EventsNewPageComponent
+    EventsNewPageComponent,
+    EventListComponent,
+    EventListItemComponent
   ],
   imports: [
     CommonModule,

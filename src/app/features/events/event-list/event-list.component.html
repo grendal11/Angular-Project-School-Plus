@@ -1,0 +1,7 @@
+<div class="events-container" *ngIf="eventList">
+    <app-event-list-item *ngFor="let event of eventList" [event]="event"></app-event-list-item>
+    <div *ngIf="evelnList?.length === 0">Няма добавени събития!</div>
+  </div>
+  <div *ngIf="!eventList">
+    Зареждане...
+  </div>

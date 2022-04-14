@@ -24,9 +24,9 @@ export class EventService {
     return this.http.post<IEvent>(`${apiUrl}/events`, body, { withCredentials: true })
   }
 
-  // loadThemeList(): Observable<IEvent[]> {
-  //   return this.http.get<IEvent[]>(`${apiUrl}/events`);
-  // }
+  loadEventList(): Observable<IEvent[]> {
+    return this.http.get<IEvent[]>(`${apiUrl}/events`);
+  }
 
   // loadThemeById(id: string): Observable<IEvent<IEventPost>> {
   //   return this.http.get<IEvent<IEventPost>>(`${apiUrl}/events/${id}`);

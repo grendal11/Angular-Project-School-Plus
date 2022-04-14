@@ -1,0 +1,23 @@
+<div class="event-container">
+    <div class="event-name"> {{event.eventName }} </div>
+
+    <div class="event-info">
+        <p>
+            Дата: <time>{{event.eventTime | date: 'dd-MM-yyyy'}}</time>
+        </p>
+        <p>
+            Час: <time>{{event.eventTime | date: 'h:mm'}}</time>
+        </p>
+        <p>Участници: <span class="subscribers-count">{{event.subscribers.length}}</span></p>
+    </div>
+
+    <div class="buttons">
+        <a [routerLink]="['/events', event._id]" class="info-btn">
+            Детайли
+        </a>
+        <button *ngIf="(isLoggedIn$ | async)" class="subscribe-btn" [class.subscribe]="canSubscribe"
+            [class.unsubscribe]="!canSubscribe">
+            {{ canSubscribe ? 'Запиши се' : 'Отпиши се' }}
+        </button>
+    </div>
+</div>
