@@ -8,4 +8,5 @@ export interface IUser extends IBase {
   username: string;
   password: string;
   role: string;
+  schoolId: string;
 }

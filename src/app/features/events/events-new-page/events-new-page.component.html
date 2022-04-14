@@ -1,0 +1,53 @@
+<h2>Добавяне на събитие</h2>
+
+<form #newEventForm="ngForm" (ngSubmit)="submitNewEvent(newEventForm)">
+    <div class="form-element">
+        <label for="eventName">Име на събитието <span class="red">*</span></label>
+        <input #eventName="ngModel" [class.input-error]="eventName.touched && eventName.invalid" type="text"
+            name="eventName" ngModel id="eventName" required minlength="5">
+        <ng-container *ngIf="eventName.touched && eventName.invalid">
+            <p *ngIf="eventName.errors.required" class="error">
+                Полето е задължително.
+            </p>
+            <p *ngIf="eventName.errors.minlength" class="error">
+                Името трябва да е поне 5 букви.
+            </p>
+        </ng-container>
+    </div>
+
+    <div class="form-element">
+        <label for="eventDescription">Описание <span class="red">*</span></label>
+        <textarea #eventDescription="ngModel" type="text" name="eventDescription" ngModel id="eventDescription" rows="8"
+            class="height" required minlength="10"></textarea>
+
+        <ng-container *ngIf="eventDescription.touched && eventDescription.invalid">
+            <p *ngIf="eventDescription.errors.required" class="error">
+                Полето е задължително.
+            </p>
+            <p *ngIf="eventDescription.errors.minlength" class="error">
+                Текста трябва да е поне 10 символа
+            </p>
+        </ng-container>
+    </div>
+
+    <div class="form-element">
+        <label for="meeting-time">Дата и час на събитието:</label>
+        <input #eventTime="ngModel" type="datetime-local" id="meeting-time" name="eventTime" ngModel required value="">
+
+        <ng-container *ngIf="eventTime.touched && eventTime.invalid">
+            <p *ngIf="eventTime.errors.required" class="error">
+                Полето е задължително.
+            </p>
+        </ng-container>
+    </div>
+
+    <div class="form-element check-type">
+        <input #schoolCheck="ngModel" type="checkbox" name="schoolCheck" ngModel id="schoolCheck">
+        <label for="schoolCheck">Само за моето училище</label>
+    </div>
+
+    <div class="form-element">
+        <button type="button" (click)="navigateToEvents()" class="cancel">Отказ</button>
+        <button [disabled]="newEventForm.invalid" [class.disabled]="newEventForm.invalid" class="public">Запис</button>
+    </div>
+</form>

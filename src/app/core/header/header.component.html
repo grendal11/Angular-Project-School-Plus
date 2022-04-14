@@ -2,8 +2,8 @@
     <div class="site-logo"><a routerLink="/home">Училище+</a></div>
     <div class="navigation">
         <ul class="left-nav">
-            <li><a routerLink="/">Събития</a></li>
-            <li *ngIf="(isLoggedIn$ | async)"><a routerLink="/">Ново събитие</a></li>
+            <li><a routerLink="/events">Събития</a></li>
+            <li *ngIf="(isLoggedIn$ | async)"><a routerLink="/events/new">Ново събитие</a></li>
         </ul>
         <ul class="right-nav">
             <li *ngIf="(isLoggedIn$ | async)"><a routerLink="/profile">

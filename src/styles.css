@@ -44,7 +44,6 @@ h2 {
   font-weight: bold;
   font-style: italic;
   color: var(--color-teal-dark);
-  font-family: "Montserrat", sans-serif;
 }
 
 h2::after {

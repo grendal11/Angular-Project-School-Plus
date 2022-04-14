@@ -8,6 +8,9 @@ import { FooterComponent } from './core/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
+import { EventsRoutingModule } from './features/events/events-routing.module';
+import { FormsModule } from '@angular/forms';
+import { EventsModule } from './features/events/events.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { CoreModule } from './core/core.module';
     RouterModule,
     CoreModule.forRoot(),
     AppRoutingModule,
+    FormsModule,
+    EventsModule,
     AuthModule
   ],
   providers: [],
