@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
 import { EventsRoutingModule } from './features/events/events-routing.module';
 import { FormsModule } from '@angular/forms';
 import { EventsModule } from './features/events/events.module';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,16 @@ import { EventsModule } from './features/events/events.module';
     EventsModule,
     AuthModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (authService: AuthService) => {
+        return () => authService.authenticate();
+      },
+      deps: [AuthService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
