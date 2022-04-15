@@ -27,7 +27,7 @@ export class EventService {
   loadEventList(): Observable<IEvent[]> {
     return this.http.get<IEvent[]>(`${apiUrl}/events`);
   }
-
+ 
   loadEventById(id: string): Observable<IEvent> {
     return this.http.get<IEvent>(`${apiUrl}/events/${id}`);
   }

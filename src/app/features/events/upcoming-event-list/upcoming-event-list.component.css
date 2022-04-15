@@ -1,0 +1,20 @@
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.no-events {
+    grid-column: span 3;
+}
+
+.loading, .no-events {
+    margin: 4rem auto;
+    width: 100%;
+    text-align: center;
+    color: var(--color-orange);
+    font-family: var(--font-montserrat);
+    font-style: italic;
+    font-size: 1.6rem;
+}

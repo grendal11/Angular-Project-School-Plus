@@ -10,6 +10,7 @@ import { storageServiceProvider } from './services/storage.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ErrorHandlerInterceptor } from './interceptors/error-handler.interceptor';
+import { EventsModule } from '../features/events/events.module';
 
 
 
@@ -22,7 +23,8 @@ import { ErrorHandlerInterceptor } from './interceptors/error-handler.intercepto
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    EventsModule
   ],
   exports: [
     HeaderComponent,

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { EventsNewPageComponent } from './events-new-page/events-new-page.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { EventListItemComponent } from './event-list-item/event-list-item.component';
+import { UpcomingEventListComponent } from './upcoming-event-list/upcoming-event-list.component';
 
 
 
@@ -17,7 +18,8 @@ import { EventListItemComponent } from './event-list-item/event-list-item.compon
     EventsPageComponent,
     EventsNewPageComponent,
     EventListComponent,
-    EventListItemComponent
+    EventListItemComponent,
+    UpcomingEventListComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { EventListItemComponent } from './event-list-item/event-list-item.compon
   exports: [
     EventsDetailPageComponent,
     EventsPageComponent,
-    EventsNewPageComponent
+    EventsNewPageComponent, 
+    UpcomingEventListComponent
   ]
 })
 export class EventsModule { }
