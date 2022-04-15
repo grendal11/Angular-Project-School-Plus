@@ -11,6 +11,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ErrorHandlerInterceptor } from './interceptors/error-handler.interceptor';
 import { EventsModule } from '../features/events/events.module';
+import { HeroSectionComponent } from './hero-section/hero-section.component';
 
 
 
@@ -19,7 +20,8 @@ import { EventsModule } from '../features/events/events.module';
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    HeroSectionComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { EventsModule } from '../features/events/events.module';
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    HeroSectionComponent
   ]
 })
 export class CoreModule {

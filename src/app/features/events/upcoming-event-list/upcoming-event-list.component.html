@@ -1,6 +1,6 @@
 <div class="events-container" *ngIf="eventList">
     <app-event-list-item *ngFor="let event of eventList" [event]="event"></app-event-list-item>
-    <div *ngIf="!(evelnList?.length > 0)" class="no-events">Няма предстоящи събития!</div>
+    <div *ngIf="(eventList?.length === 0)" class="no-events">Няма предстоящи събития!</div>
 </div>
 <div *ngIf="!eventList" class="loading">
     Зареждане...

@@ -1,0 +1,27 @@
+.hero {
+    background-color: var(--color-beige);
+    width: calc(100% + 40px);
+    color: #9b2c2c;
+    padding: 2rem 4rem;
+    border-bottom: 0.5rem solid rgba(155, 44, 44, 0.2);
+    position: relative;
+    top: -2rem;
+    left: -20px;
+}
+
+.hero h1 {
+   font-size: 2.8rem;
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-style: italic;
+   width: 70%;
+   line-height: 1;
+}
+
+.hero h3 {
+    font-size: 1.4rem;
+    font-family: var(--font-montserrat);
+    color: var(--color-teal-dark);
+    font-style: italic;
+    line-height: 1;
+    margin-top: 1rem;
+ }
