@@ -20,3 +20,7 @@
         </ul>
     </div>
 </nav>
+<p *ngIf="!!message" [ngClass]="{'error-message': isErrorMessage, 'success-message': !isErrorMessage}"
+    class="notification">
+    {{message}}
+</p>

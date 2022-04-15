@@ -5,14 +5,22 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
+import { MessageBusService, MessageType } from '../services/message-bus.service';
 
 @Injectable()
 export class ErrorHandlerInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private messageBus: MessageBusService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    return next.handle(request).pipe(catchError(err => {
+      this.messageBus.notifyForMessage({
+        text: err?.error?.message || 'Something went wrong!',
+        type: MessageType.Error
+      });
+      //notify header
+      return throwError(err);    //rethrow original error
+    }));
   }
 }

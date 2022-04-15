@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerFormGroup: FormGroup = this.formBuilder.group({
-    'username': new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z0-9]{5,}')]),
+    'username': new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z0-9а-яА-Я ]{5,}')]),
     'email': new FormControl(null, [Validators.required, emailValidator]),
     'passwords': new FormGroup({
       'password': this.passwordControl,

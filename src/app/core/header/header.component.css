@@ -44,15 +44,44 @@ nav a:hover {
 }
 
 
-@media only screen and (max-width: 700px)
+.notification{
+    position: fixed;
+    z-index: 10;
+    right: 1.2rem;
+    top: 4.2rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-small);
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgb(204, 204, 204);
+    background-color: rgba(181, 72, 41, 0.7);
+ }
+  
+.error-message {
+    background-color: rgba(181, 72, 41, 0.7);
+}
+  
+.success-message {
+    background-color: rgba(44, 82, 130, 0.75);
+}
+  
+
+
+@media only screen and (max-width: 750px)
 {
     li {
         margin: 0px 0.4rem;
     }
+
+    .notification {
+        right: 1rem;
+        top: 4rem;
+    }
 }
 
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 650px)
 {    
     nav {
         flex-direction: column;
@@ -71,6 +100,11 @@ nav a:hover {
     ul {
         padding: 0;
     }
+
+    .notification {
+        right: 0.6rem;
+        top: 7.2rem;
+    }
 }
 
 
@@ -87,4 +121,11 @@ nav a:hover {
         display: block;
         margin: 0.4rem;
     }
+
+    .notification {
+        right: 0.8rem;
+        top: 16.2rem;
+    }
+
 }
+

@@ -42,14 +42,15 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         }
 
-        this.messageBus.notifyForMessage({text: 'User successfully logged in!', type: MessageType.Success});
+        this.messageBus.notifyForMessage({text: 'Успешен вход в системата!', type: MessageType.Success});
       },
-      complete: () => {
-        console.log('login stream completed');
-      },
+      // complete: () => {
+      //   console.log('login stream completed');
+      // },
       error: (err) => {
         // console.log(err);
         this.errorMessage = err.error.message;
+        // this.messageBus.notifyForMessage({text: this.errorMessage, type: MessageType.Error});
       }
     });
   }

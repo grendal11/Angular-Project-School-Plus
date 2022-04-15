@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
-import { IEvent } from 'src/app/core/interfaces';
+import { IEvent, IUser } from 'src/app/core/interfaces';
 import { EventService } from 'src/app/core/services/event.service';
 
 @Component({
@@ -15,6 +15,8 @@ export class EventsDetailPageComponent implements OnInit {
 
   canSubscribe: boolean = false;
   isLoggedIn$: Observable<boolean> = this.authService.isLoggedIn$;
+  currentUser$: Observable<IUser|undefined> = this.authService.currentUser$;
+  userId: string = "";
 
   constructor(private activatedRoute: ActivatedRoute, 
     private eventService: EventService,
@@ -27,7 +29,12 @@ export class EventsDetailPageComponent implements OnInit {
       console.log(this.event);
       
     //TODO: CurrentUserId
-      this.canSubscribe = !this.event.subscribers.includes('5fa64b162183ce1728ff371d');
+
+      this.currentUser$.subscribe(user => {
+        this.userId = user._id;
+        this.canSubscribe = !this.event.subscribers.includes(this.userId);
+      });
+
     });
   }
 

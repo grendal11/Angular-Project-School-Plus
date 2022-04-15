@@ -15,7 +15,7 @@ export enum MessageType {
   providedIn: 'root'
 })
 export class MessageBusService {
-  private messageQueue$ = new Subject<Message|undefined>();
+  private messageQueue$ = new Subject<Message>();
 
   onNewMessage$ = this.messageQueue$.asObservable();
 

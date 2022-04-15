@@ -59,6 +59,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       },
       complete: () => {
         this.isLoggingOut = false;
+        this.messageBus.notifyForMessage({text: 'Излязохте от системата!', type: MessageType.Success});
         this.router.navigate(['/home']);
       },
       error: () => {
