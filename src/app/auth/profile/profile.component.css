@@ -1,0 +1,80 @@
+.profile {
+    width: 80%;
+    margin: 2em auto 0;
+    text-align: center;
+    border-radius: var(--border-radius-big);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 10rem;
+}
+
+.profile-picture img {
+    width: 100%;
+}
+
+.edit-btn, .role-btn, .cancel-btn, .save-btn {
+    color: var(--color-orange);
+    border: none;
+    background-color: white;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+}
+
+.role-btn, .save-btn {
+    color: var(--color-info);
+    display: block;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-info-edit {
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: flex-start;
+    gap: 0.4rem;
+}
+
+.buttons-edit {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.user-info {
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.4rem;
+}
+
+.info-element {
+    font-style: italic;
+}
+
+.info-element span {
+    font-weight: bold;
+}

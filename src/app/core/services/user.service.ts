@@ -20,10 +20,13 @@ export class UserService {
 
  
   getProfile$(): Observable<IUser> {
-    return this.httpClient.get<IUser>(`${environment.apiUrl}/profile`, {withCredentials: true});
+    return this.httpClient.get<IUser>(`${environment.apiUrl}/users/profile`, {withCredentials: true});
   }
   
-  
+  updateProfile$(userData: CreateUserDto): Observable<IUser> {
+    return this.httpClient.patch<IUser>(`${environment.apiUrl}/users/profile`, userData, {withCredentials: true});
+  }
+ 
 }
 
 
