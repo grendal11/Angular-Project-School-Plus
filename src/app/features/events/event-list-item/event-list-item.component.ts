@@ -20,7 +20,7 @@ export class EventListItemComponent implements OnChanges {
 
   ngOnChanges(): void {
     // TODO : use currentUser$!
-    this.canSubscribe = this.event.subscribers.includes("6255cd76108cf052a83b1a20");
+    this.canSubscribe = !this.event.subscribers.includes("6255cd76108cf052a83b1a20");
   }
 
 
