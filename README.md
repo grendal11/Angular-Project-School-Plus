@@ -1,3 +1,35 @@
+# Angular-Project-School-Plus
+
+**School Plus** is web application for organizing and managing school groups of interests, activities, events(competitions, meetings etc...). The app is with Bulgarian interface.
+
+**There are two types of users:**
+-	**Registered users** – can add events, subscribe and unsubscribe for events
+-	**Guest users** – can browse through open events, can register, view hero section
+- everybody can see the lists of open events and detailed information for each event
+
+
+**Next steps** (will be implemented soon):
+-	**Registered users** – can add, edit and delete comments, can like/unlike comments, can change role for chosen school (teaher/student/no role), teachers can add school groups, students can subscribe/unsubscribe for groups, users with role can see events and groups for own school 
+
+
+**Back-end**: the app uses modified by me rest-api, used in SoftUni Angular course - match 2022.
+
+
+
+**Technology stack:**
+-	Angular: ~13.3.0,
+-   Design: custom CSS,
+-	For DB and authentication - mongo/express rest-api
+-	Icons - Font-awsome
+
+
+
+ 
+
+
+# Initial documentation follows below
+******************************************
+
 # SchoolPlus
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
