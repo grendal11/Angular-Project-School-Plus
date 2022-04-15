@@ -4,3 +4,13 @@
     padding: 1rem;
     gap: 2rem;
 }
+
+
+.loading {
+    margin: 4rem auto;
+    width: 200px;
+    color: var(--color-orange);
+    font-family: var(--font-montserrat);
+    font-style: italic;
+    font-size: 1.6rem;
+}

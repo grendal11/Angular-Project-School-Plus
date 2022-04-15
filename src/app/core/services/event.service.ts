@@ -28,8 +28,8 @@ export class EventService {
     return this.http.get<IEvent[]>(`${apiUrl}/events`);
   }
 
-  // loadThemeById(id: string): Observable<IEvent<IEventPost>> {
-  //   return this.http.get<IEvent<IEventPost>>(`${apiUrl}/events/${id}`);
-  // }
+  loadEventById(id: string): Observable<IEvent> {
+    return this.http.get<IEvent>(`${apiUrl}/events/${id}`);
+  }
 
 }

@@ -9,7 +9,7 @@
 }
 
 .event-name {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-montserrat);
     font-weight: bold;
     font-style: italic;
     background-color: var(--color-teal-dark);  

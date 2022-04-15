@@ -33,7 +33,7 @@ a:hover {
     font-style: italic;
     color: var(--color-teal-dark);
     text-shadow: 3px 3px black;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-montserrat);
 }
 
   

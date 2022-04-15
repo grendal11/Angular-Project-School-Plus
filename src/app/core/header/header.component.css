@@ -2,9 +2,9 @@
     font-size: 32px;
     font-weight: bold;
     font-style: italic;
-    color: #e6fffa;
+    color: var(--color-teal-light);
     text-shadow: 3px 3px black;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-montserrat);
 }
 
 nav {
