@@ -1,6 +1,6 @@
 .events-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding: 1rem;
     gap: 2rem;
 }
@@ -8,9 +8,33 @@
 
 .loading {
     margin: 4rem auto;
-    width: 200px;
+    width: 10rem;
     color: var(--color-orange);
     font-family: var(--font-montserrat);
     font-style: italic;
     font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 1600px)
+{
+  .events-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 1200px)
+{
+  .events-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px)
+{
+  .events-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }

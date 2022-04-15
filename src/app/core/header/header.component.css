@@ -1,5 +1,5 @@
 .site-logo a {
-    font-size: 32px;
+    font-size: 1.6rem;
     font-weight: bold;
     font-style: italic;
     color: var(--color-teal-light);
@@ -9,16 +9,16 @@
 
 nav {
     background-color: var(--color-teal-dark);
-    padding: 20px;
+    padding: 1rem;
     display: flex;
     align-items: center;
 }
 
 .navigation {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     flex-grow: 1;
-    /* margin-left: auto; */
 }
 
 ul {
@@ -27,12 +27,12 @@ ul {
 }
 
 li {
-    margin: 0px 12px;
+    margin: 0px 0.6rem;
 }
 
 nav a, i {
     color: var(--color-teal-light);
-    font-size: 20px;
+    font-size: 1rem;
     text-decoration: none;
     padding-bottom: 5px;
 }
@@ -41,4 +41,50 @@ nav a:hover {
     color: var(--color-teal-medium);
     /* border-bottom: 5px solid var(--color-teal-light); */
     transition: all 200ms;
+}
+
+
+@media only screen and (max-width: 700px)
+{
+    li {
+        margin: 0px 0.4rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px)
+{    
+    nav {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    nav div {
+        margin: 0.4rem;
+    }
+
+    .navigation {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    ul {
+        padding: 0;
+    }
+}
+
+
+@media only screen and (max-width: 450px)
+{ 
+    .navigation, .right-nav, .left-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;        
+    }
+
+    a {
+        display: block;
+        margin: 0.4rem;
+    }
 }

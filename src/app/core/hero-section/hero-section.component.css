@@ -1,19 +1,19 @@
 .hero {
     background-color: var(--color-beige);
-    width: calc(100% + 40px);
+    width: calc(100% + 2rem);
     color: #9b2c2c;
     padding: 2rem 4rem;
     border-bottom: 0.5rem solid rgba(155, 44, 44, 0.2);
     position: relative;
     top: -2rem;
-    left: -20px;
+    left: -1rem;
+    text-align: left;
 }
 
 .hero h1 {
    font-size: 2.8rem;
    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    font-style: italic;
-   width: 70%;
    line-height: 1;
 }
 
@@ -25,3 +25,48 @@
     line-height: 1;
     margin-top: 1rem;
  }
+
+@media only screen and (max-width: 1500px)
+{
+    .hero {
+        padding: 2rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 850px)
+{
+    .hero {
+        padding: 1.6rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{
+    .hero {
+        padding: 1rem 0.6rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h3 {
+        font-size: 1rem;
+    }
+}
