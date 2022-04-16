@@ -32,4 +32,12 @@ export class EventService {
     return this.http.get<IEvent>(`${apiUrl}/events/${id}`);
   }
 
+  subscribeEvent(id: string): Observable<IEvent> {
+    return this.http.put<IEvent>(`${apiUrl}/events/${id}/subscribe`, {}, { withCredentials: true });
+  }
+
+  unsubscribeEvent(id: string): Observable<IEvent> {
+    return this.http.put<IEvent>(`${apiUrl}/events/${id}/unsubscribe`, {}, { withCredentials: true });
+  }
+
 }

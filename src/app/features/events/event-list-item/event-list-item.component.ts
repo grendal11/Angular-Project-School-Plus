@@ -1,7 +1,10 @@
+import { convertUpdateArguments } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { IEvent, IUser } from 'src/app/core/interfaces';
+import { EventService } from 'src/app/core/services/event.service';
 
 @Component({
   selector: 'app-event-list-item',
@@ -18,7 +21,10 @@ export class EventListItemComponent implements OnChanges, OnInit {
 
   @Input() event: IEvent;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService, 
+    private eventService: EventService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.currentUser$.subscribe(user => {
@@ -28,8 +34,25 @@ export class EventListItemComponent implements OnChanges, OnInit {
 
   ngOnChanges(): void {
     // TODO : use currentUser$!
+    this.currentUser$.subscribe(user => {
+      this.userId = user._id;
+    });
     this.canSubscribe = !this.event.subscribers.includes(this.userId);
   }
 
+  handleSubscribe(event: IEvent): void {
+    this.eventService.subscribeEvent(event._id).subscribe(updatedEvent => {
+      // console.log(updatedEvent);      
+        this.event = updatedEvent;
+        this.router.navigate(['/events']);
+    })
+  }
 
+  handleUnsubscribe(event: IEvent): void {
+    this.eventService.unsubscribeEvent(event._id).subscribe(updatedEvent=> {
+      console.log(updatedEvent);      
+        this.event = updatedEvent ;
+        this.router.navigate(['/events']);
+      });
+  }
 }
