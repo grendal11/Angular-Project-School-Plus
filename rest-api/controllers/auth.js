@@ -93,19 +93,19 @@ function getProfileInfo(req, res, next) {
         .catch(next);
 }
 
-// function editProfileInfo(req, res, next) {
-//     const { _id: userId } = req.user;
-//     const { tel, username, email } = req.body;
+function editProfileInfo(req, res, next) {
+    const { _id: userId } = req.user;
+    const { tel, username, email } = req.body;
 
-//     userModel.findOneAndUpdate({ _id: userId }, { tel, username, email }, { runValidators: true, new: true })
-//         .then(x => { res.status(200).json(x) })
-//         .catch(next);
-// }
+    userModel.findOneAndUpdate({ _id: userId }, { tel, username, email }, { runValidators: true, new: true })
+        .then(x => { res.status(200).json(x) })
+        .catch(next);
+}
 
 module.exports = {
     login,
     register,
     logout,
     getProfileInfo,
-    // editProfileInfo,
+    editProfileInfo,
 }

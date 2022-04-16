@@ -23,7 +23,7 @@
             Добави коментар
         </button>
         <button *ngIf="(isLoggedIn$ | async)" class="subscribe-btn" [class.subscribe]="canSubscribe"
-            [class.unsubscribe]="!canSubscribe">
+            [class.unsubscribe]="!canSubscribe" (click)="canSubscribe ? handleSubscribe(event) : handleUnsubscribe(event)">
             {{ canSubscribe ? 'Запиши се' : 'Отпиши се' }}
         </button>
     </div>

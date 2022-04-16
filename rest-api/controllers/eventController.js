@@ -28,13 +28,35 @@ function createEvent(req, res, next) {
     //TODO
     eventModel.create({ eventName, eventDescription, eventTime, schoolId: school, userId, subscribers: [], eventPosts: [] })
         .then(event => res.status(200).json(event))
-        .catch (next);
+        .catch(next);
 }
 
 function subscribe(req, res, next) {
     const eventId = req.params.eventId;
     const { _id: userId } = req.user;
     eventModel.findByIdAndUpdate({ _id: eventId }, { $addToSet: { subscribers: userId } }, { new: true })
+        .populate({
+            path: 'subscribers',
+            populate: {
+                path: 'userId'
+            }
+        })
+        .then(updatedEvent => {
+            res.status(200).json(updatedEvent)
+        })
+        .catch(next);
+}
+
+function unsubscribe(req, res, next) {
+    const eventId = req.params.eventId;
+    const { _id: userId } = req.user;
+    eventModel.findByIdAndUpdate({ _id: eventId }, { $pull: { subscribers: userId } }, { new: true })
+        .populate({
+            path: 'subscribers',
+            populate: {
+                path: 'userId'
+            }
+        })
         .then(updatedEvent => {
             res.status(200).json(updatedEvent)
         })
@@ -46,4 +68,5 @@ module.exports = {
     createEvent,
     getEvent,
     subscribe,
+    unsubscribe
 }

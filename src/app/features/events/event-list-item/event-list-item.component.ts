@@ -15,14 +15,14 @@ import { EventService } from 'src/app/core/services/event.service';
 export class EventListItemComponent implements OnChanges, OnInit {
 
   isLoggedIn$: Observable<boolean> = this.authService.isLoggedIn$;
-  currentUser$: Observable<IUser|undefined> = this.authService.currentUser$;
+  currentUser$: Observable<IUser | undefined> = this.authService.currentUser$;
   userId: string = "";
   canSubscribe: boolean = false;
 
   @Input() event: IEvent;
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
     private eventService: EventService,
     private router: Router) { }
 
@@ -43,16 +43,20 @@ export class EventListItemComponent implements OnChanges, OnInit {
   handleSubscribe(event: IEvent): void {
     this.eventService.subscribeEvent(event._id).subscribe(updatedEvent => {
       // console.log(updatedEvent);      
-        this.event = updatedEvent;
-        this.router.navigate(['/events']);
+      this.event = { ...updatedEvent };
+      this.canSubscribe = !this.canSubscribe;
     })
+    this.router.navigate(['/events']);
   }
 
   handleUnsubscribe(event: IEvent): void {
-    this.eventService.unsubscribeEvent(event._id).subscribe(updatedEvent=> {
-      console.log(updatedEvent);      
-        this.event = updatedEvent ;
-        this.router.navigate(['/events']);
-      });
+    this.eventService.unsubscribeEvent(event._id).subscribe(updatedEvent => {
+      console.log(updatedEvent);
+      this.event = { ...updatedEvent };
+      // console.log(this.event);        
+      this.canSubscribe = !this.canSubscribe;
+    });
+
+    this.router.navigate(['/events']);
   }
 }
