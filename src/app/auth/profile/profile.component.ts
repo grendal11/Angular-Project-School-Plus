@@ -51,7 +51,6 @@ export class ProfileComponent implements OnInit {
 
   updateProfile(): void {
     // console.log(this.editProfileForm.value);
-    //TODO - http заявка
     this.userService.updateProfile$(this.editProfileForm.value).subscribe(() => {
       this.authService.authenticate().subscribe(user => {
         this.currentUser = user;
@@ -60,5 +59,7 @@ export class ProfileComponent implements OnInit {
     });
     this.isInEditMode = false;
   }
+
+  //TODO: Valia - edit picture
 
 }

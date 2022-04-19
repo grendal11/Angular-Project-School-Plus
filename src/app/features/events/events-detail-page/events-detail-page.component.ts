@@ -28,7 +28,7 @@ export class EventsDetailPageComponent implements OnInit {
     const eventId = this.activatedRoute.snapshot.params['eventId'];
     this.eventService.loadEventById(eventId).subscribe(event => {
       this.event = event;
-      console.log(this.event);
+      // console.log(this.event);
       
     //TODO: CurrentUserId
 
@@ -59,7 +59,7 @@ export class EventsDetailPageComponent implements OnInit {
 
   handleUnsubscribe(event: IEvent): void {
     this.eventService.unsubscribeEvent(event._id).subscribe(updatedEvent => {
-      console.log(updatedEvent);
+      // console.log(updatedEvent);
       this.event = { ...updatedEvent };
       // console.log(this.event);        
       this.canSubscribe = !this.canSubscribe;

@@ -1,35 +1,38 @@
 <h2>Информация за потребителя</h2>
-<div class="profile">
-    <div class="profile-picture">
-        <img src="assets/profile.png" alt="default user">
-    </div>
+<div class="profile" [class.edit-mode]="isInEditMode">
+    <a routerLink="/profile">
+        <div class="profile-picture">
+            <img src="assets/profile.png" alt="default user">
+            <i class="fa-solid fa-camera"></i>
+        </div>
+    </a>
     <ng-container *ngIf="!!currentUser">
         <ng-container *ngIf="!isInEditMode">
             <div class="user-info">
                 <div class="info-element">
-                    <p>Потребителско име:
+                    <p>Потребителско име: 
                         <span class="info">{{currentUser.username}}</span>
                     </p>
                 </div>
                 <div class="info-element">
-                    <p>Email адрес:
+                    <p>Email адрес: 
                         <span class="info">{{currentUser.email}}</span>
                     </p>
                 </div>
                 <div class="info-element">
-                    <p>Tелефон:
+                    <p>Tелефон: 
                         <span *ngIf="!!currentUser.tel" class="info">{{currentUser.tel}}</span>
                         <span *ngIf="!currentUser.tel" class="info">не е посочен</span>
                     </p>
                 </div>
                 <div class="info-element">
-                    <p>Училище:
+                    <p>Училище: 
                         <span *ngIf="!!currentUser.schoolId" class="info">{{currentUser.schoolId}}</span>
                         <span *ngIf="!currentUser.schoolId" class="info">няма избрано училище</span>
                     </p>
                 </div>
                 <div class="info-element">
-                    <p>Роля в училище:
+                    <p>Роля в училище: 
                         <span *ngIf="!!currentUser.role" class="info">{{currentUser.role}}</span>
                         <span *ngIf="!currentUser.role" class="info">няма избрана</span>
                     </p>
@@ -50,18 +53,18 @@
         <form #editProfileForm="ngForm" (ngSubmit)="updateProfile()">
             <div class="user-info-edit">
                 <div class="info-element">
-                    <p>Потребителско име:
+                    <p>Потребителско име: 
                         <input type="text" name="username" ngModel required minlength="5" id="username" value="Johny">
                     </p>
                 </div>
                 <div class="info-element">
-                    <p>Email адрес:
+                    <p>Email адрес: 
                         <input #email="ngModel" [class.input-error]="email.touched && email.invalid" type="email"
                             name="email" ngModel required emailValidator id="email" value="john.doe@gmail.com">
                     </p>
                 </div>
                 <div class="info-element">
-                    <p>Tелефон:
+                    <p>Tелефон: 
                         <input ngModel type="text" name="tel" id="tel" value="885 888 888">
                     </p>
                 </div>
@@ -70,7 +73,7 @@
             <div class="buttons-edit">
                 <button type="button" (click)="isInEditMode = false" class="cancel-btn">Отказ</button>
                 <button [disabled]="editProfileForm.invalid" class="save-btn">Запис</button>
-          </div>
+            </div>
         </form>
     </ng-container>
 
