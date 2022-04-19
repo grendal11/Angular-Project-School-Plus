@@ -1,0 +1,129 @@
+form {
+    width: 75%;
+    margin: 2em auto 0;
+    text-align: center;
+    border-radius: var(--border-radius-big);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
+
+form * {
+    font-size: 1rem;
+}
+
+label {
+    font-family: var(--font-montserrat);
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+}
+
+p {
+    padding-bottom: 0;
+    padding-top: 1.5rem;
+}
+
+input {
+    flex: 0 1 100%;
+    width: 100%;
+    border: 1px solid var(--color-teal-dark);
+    padding: 0.3em;
+    border-left: 0.3em solid var(--color-teal-dark);
+    border-top-right-radius:var(--border-radius-small);
+    border-bottom-right-radius:var(--border-radius-small);
+}
+
+select {
+    border-color: var(--color-teal-dark);
+}
+
+button {
+    color: var(--color-teal-light);
+    background-color: var(--color-teal-dark);
+    border: none;
+    border-radius: var(--border-radius-small);
+    padding: 0.6em 1.2em;
+    margin: 0 1rem;
+    margin-top: 1.5rem;
+    width: 10rem;
+    outline: none;
+    cursor: pointer;
+}
+
+a {
+    color: var(--color-orange);
+    font-weight: bold;
+    text-decoration: none;
+    font-style: italic;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.form-element {
+    margin-top: 1rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+/* errors  */
+
+p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 4px;
+}
+
+.input-error {
+    border-left-color: red;
+}
+
+.disabled:hover {
+    cursor:not-allowed;
+}
+
+.cancel {
+    background-color: var(--color-orange);
+}
+
+
+.check-type * {
+    display: inline-block;
+    vertical-align: middle;   
+}
+
+.check-type input {
+    width: 1rem;
+    height: 1rem;
+}
+
+@media only screen and (max-width: 1000px)
+{
+  form {
+    width: 85%;
+    padding: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 800px)
+{
+  form {
+    width: 90%;
+    padding: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 600px)
+{
+  form {
+    width: 95%;
+    padding: 1rem;
+  }
+}

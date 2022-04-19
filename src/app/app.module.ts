@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { FormsModule } from '@angular/forms';
 import { EventsModule } from './features/events/events.module';
 import { AuthService } from './auth.service';
+import { SchoolsModule } from './features/schools/schools.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AuthService } from './auth.service';
     AppRoutingModule,
     FormsModule,
     EventsModule,
+    SchoolsModule,
     AuthModule
   ],
   providers: [
