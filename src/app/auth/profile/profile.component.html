@@ -27,7 +27,7 @@
                 </div>
                 <div class="info-element">
                     <p>Училище: 
-                        <span *ngIf="!!currentUser.schoolId" class="info">{{currentUser.schoolId}}</span>
+                        <span *ngIf="!!currentUser.schoolId" class="info">{{currentUser.schoolId.schoolName}}</span>
                         <span *ngIf="!currentUser.schoolId" class="info">няма избрано училище</span>
                     </p>
                 </div>

@@ -7,9 +7,9 @@
         </ul>
         <ul class="right-nav">
             <li *ngIf="(isLoggedIn$ | async)"><a routerLink="/profile">
-                    <i *ngIf="(isLoggedIn$ | async)?.role == 'student'" class="fa-solid fa-user-large"></i>
-                    <i *ngIf="(isLoggedIn$ | async)?.role == 'teacher'" class="fa-solid fa-user-graduate"></i>
-                    <i *ngIf="!(isLoggedIn$ | async).role" class="fa-solid fa-user-large-slash"></i>
+                    <i *ngIf="(currentUser$ | async)?.role == 'student'" class="fa-solid fa-user-large"></i>
+                    <i *ngIf="(currentUser$ | async)?.role == 'teacher'" class="fa-solid fa-user-graduate"></i>
+                    <i *ngIf="!(currentUser$ | async).role" class="fa-solid fa-user-large-slash"></i>
                     {{(currentUser$ | async).username }}
                 </a></li>
             <li *ngIf="!(isLoggedIn$ | async)"><a routerLink="/login">Вход</a></li>
