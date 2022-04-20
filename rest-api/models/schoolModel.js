@@ -11,7 +11,7 @@ const schoolSchema = new mongoose.Schema({
         required: true
     },
     schoolTown: {
-        type: Date,
+        type: String,
         required: true
     },
     teachers: [{

@@ -1,54 +1,51 @@
-<p>schools-new-page works!</p>
+<h2>Добавяне на училище</h2>
 
 <form #newSchoolForm="ngForm" (ngSubmit)="submitNewSchool(newSchoolForm)">
     <div class="form-element">
-    <label for="schoolName">Име на училище <span class="red">*</span></label>
-    <input #schoolName="ngModel" [class.input-error]="schoolName.touched && schoolName.invalid" type="text"
-        name="schoolName" ngModel id="schoolName" required minlength="5">
+        <label for="schoolName">Име на училище <span class="red">*</span></label>
+        <input #schoolName="ngModel" [class.input-error]="schoolName.touched && schoolName.invalid" type="text"
+            name="schoolName" ngModel id="schoolName" required minlength="3">
         <ng-container *ngIf="schoolName.touched && schoolName.invalid">
             <p *ngIf="schoolName.errors.required" class="error">
                 Полето е задължително.
             </p>
             <p *ngIf="schoolName.errors.minlength" class="error">
-                Името трябва да е поне 5 букви.
+                Името трябва да е поне 3 букви.
             </p>
         </ng-container>
     </div>
-    <!-- 
 
     <div class="form-element">
-        <label for="eventDescription">Описание <span class="red">*</span></label>
-        <textarea #eventDescription="ngModel" type="text" name="eventDescription" ngModel id="eventDescription" rows="8"
-            class="height" required minlength="10"></textarea>
-
-        <ng-container *ngIf="eventDescription.touched && eventDescription.invalid">
-            <p *ngIf="eventDescription.errors.required" class="error">
+        <label for="schoolDistrict">Област <span class="red">*</span></label>
+        <input #schoolDistrict="ngModel" [class.input-error]="schoolDistrict.touched && schoolDistrict.invalid" type="text"
+            name="schoolDistrict" ngModel id="schoolDistrict" required minlength="3">
+        <ng-container *ngIf="schoolDistrict.touched && schoolDistrict.invalid">
+            <p *ngIf="schoolDistrict.errors.required" class="error">
                 Полето е задължително.
             </p>
-            <p *ngIf="eventDescription.errors.minlength" class="error">
-                Текста трябва да е поне 10 символа
+            <p *ngIf="schoolDistrict.errors.minlength" class="error">
+                Името трябва да е поне 3 букви.
             </p>
         </ng-container>
     </div>
 
     <div class="form-element">
-        <label for="meeting-time">Дата и час на събитието:</label>
-        <input #eventTime="ngModel" type="datetime-local" id="meeting-time" name="eventTime" ngModel required value="">
-
-        <ng-container *ngIf="eventTime.touched && eventTime.invalid">
-            <p *ngIf="eventTime.errors.required" class="error">
+        <label for="schoolTown">Населено място <span class="red">*</span></label>
+        <input #schoolTown="ngModel" [class.input-error]="schoolTown.touched && schoolTown.invalid" type="text"
+            name="schoolTown" ngModel id="schoolTown" required minlength="3">
+        <ng-container *ngIf="schoolTown.touched && schoolTown.invalid">
+            <p *ngIf="schoolTown.errors.required" class="error">
                 Полето е задължително.
             </p>
+            <p *ngIf="schoolTown.errors.minlength" class="error">
+                Името трябва да е поне 3 букви.
+            </p>
         </ng-container>
     </div>
 
-    <div class="form-element check-type">
-        <input #schoolCheck="ngModel" type="checkbox" name="schoolCheck" ngModel id="schoolCheck">
-        <label for="schoolCheck">Само за моето училище</label>
-    </div>
-
     <div class="form-element">
-        <button type="button" (click)="navigateToEvents()" class="cancel">Отказ</button>
-        <button [disabled]="newEventForm.invalid" [class.disabled]="newEventForm.invalid" class="public">Запис</button>
-    </div> -->
+        <button type="button" (click)="navigateToSchools()" class="cancel">Отказ</button>
+        <button [disabled]="newSchoolForm.invalid" [class.disabled]="newSchoolForm.invalid"
+            class="public">Запис</button>
+    </div>
 </form>
