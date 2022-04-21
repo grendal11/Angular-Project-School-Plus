@@ -1,0 +1,64 @@
+table {
+   border-collapse: collapse;
+   border: none;
+   width: 100%;
+}
+
+td {
+    border: 2px solid var(--color-teal-dark);
+}
+
+td.town {
+    width: 7rem;
+}
+
+td.roles {
+    width: 9rem;
+}
+
+.roles-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.teacher-role, .student-role, .remove-role {
+    color: var(--color-orange);
+    border: none;
+    background-color: white;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+}
+
+.student-role {
+    color: var(--color-teal-dark);
+}
+
+.remove-role {
+    color: red;
+}
+
+@media only screen and (max-width: 1000px)
+{
+    td.town {
+        width: 6rem;
+    }
+
+    td.roles {
+        width: 4rem;
+    }
+
+    td.roles span {
+        display: none;
+    }
+
+    .roles-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}

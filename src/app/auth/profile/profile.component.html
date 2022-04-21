@@ -33,7 +33,7 @@
                 </div>
                 <div class="info-element">
                     <p>Роля в училище: 
-                        <span *ngIf="!!currentUser.role" class="info">{{currentUser.role}}</span>
+                        <span *ngIf="!!currentUser.role" class="info">{{(currentUser.role=='teacher') ? 'Учител': 'Ученик'}}</span>
                         <span *ngIf="!currentUser.role" class="info">няма избрана</span>
                     </p>
                 </div>

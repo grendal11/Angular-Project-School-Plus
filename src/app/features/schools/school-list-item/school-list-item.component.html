@@ -1,1 +1,23 @@
-<p>school-list-item works!</p>
+<table>
+    <tr>
+        <td class="town">{{school.schoolDistrict}}</td>
+        <td class="town">{{school.schoolTown}}</td>
+        <td class="school">{{school.schoolName}}</td>
+        <td class="roles">
+           <div class="roles-container">
+            <a *ngIf="!(currentUser$ | async).role" class="teacher-role">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Учител</span>
+            </a>
+            <a *ngIf="!(currentUser$ | async).role" href="" class="student-role">
+                <i class="fa-solid fa-user-large"></i>
+                <span>Ученик</span>
+            </a>
+            <a *ngIf="!!(currentUser$ | async).role && (currentUser$ | async).schoolId._id == school._id" href="" class="remove-role">
+                <i class="fa-solid fa-user-large-slash"></i>
+                <span>Премахни</span>
+            </a>
+           </div>
+        </td>
+    </tr>
+</table>

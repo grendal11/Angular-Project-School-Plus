@@ -1,0 +1,62 @@
+.schools {
+    border: 2px solid var(--color-teal-dark);
+}
+
+.schools {    
+    margin: auto;
+    width: 75%;
+    border-collapse: collapse;    
+}
+
+.schools .header {
+    padding: 1px;
+}
+
+.teacher-role, .student-role, .remove-role {
+    color: var(--color-orange);
+    border: none;
+    background-color: white;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+    margin: 0 1rem;
+}
+
+.student-role {
+    color: var(--color-teal-dark);
+}
+
+.remove-role {
+    color: red;
+}
+
+th.town {
+    width: 7rem;
+}
+
+th.roles {
+    width: 9rem;
+}
+
+.schools th {
+    background-color: var(--color-teal-dark);
+    color: var(--color-teal-light);
+    font-style: italic;
+    font-weight: normal;
+}
+
+
+@media only screen and (max-width: 1000px)
+{
+    th.town {
+        width: 6rem;
+    }
+
+    th.roles {
+        width: 4rem;
+    }
+}
