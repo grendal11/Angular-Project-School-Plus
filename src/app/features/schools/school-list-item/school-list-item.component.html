@@ -2,7 +2,11 @@
     <tr>
         <td class="town">{{school.schoolDistrict}}</td>
         <td class="town">{{school.schoolTown}}</td>
-        <td class="school">{{school.schoolName}}</td>
+        <td class="school">
+            {{school.schoolName}}
+            <i class="fa-solid fa-circle-info info"></i>
+            <i *ngIf="(currentUser$ | async)?.role == 'teacher' && (currentUser$ | async).schoolId._id == school._id" class="fa-solid fa-pen-to-square edit-school"></i>
+        </td>
         <td class="roles">
            <div class="roles-container">
             <a *ngIf="!(currentUser$ | async).role" class="teacher-role">
