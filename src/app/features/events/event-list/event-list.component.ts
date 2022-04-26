@@ -15,7 +15,7 @@ export class EventListComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventService.loadEventList().subscribe(eventList => {
-      this.eventList = eventList;
+      this.eventList = eventList.sort((a, b) => Date.parse(b.eventTime.toString()) - Date.parse(a.eventTime.toString()));
       // console.log(eventList)
     });
   }

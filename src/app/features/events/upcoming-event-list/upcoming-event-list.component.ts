@@ -17,7 +17,9 @@ export class UpcomingEventListComponent implements OnInit {
     const now = new Date();
     this.eventService.loadEventList().subscribe(eventList => {
       // console.log(eventList)
-      this.eventList = eventList.filter(event => Date.parse(event.eventTime.toString()) > now.getTime());
+      this.eventList = eventList
+        .filter(event => Date.parse(event.eventTime.toString()) > now.getTime())
+        .sort((a, b) => Date.parse(a.eventTime.toString()) - Date.parse(b.eventTime.toString()));;
       // console.log(this.eventList);
     });
   }
