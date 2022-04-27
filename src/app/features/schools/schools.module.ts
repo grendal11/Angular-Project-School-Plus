@@ -4,7 +4,7 @@ import { SchoolsRoutingModule } from './schools-routing.module';
 
 import { SchoolsPageComponent } from './schools-page/schools-page.component';
 import { SchoolListComponent } from './school-list/school-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SchoolsNewPageComponent } from './schools-new-page/schools-new-page.component';
 import { SchoolListItemComponent } from './school-list-item/school-list-item.component';
 
@@ -21,7 +21,8 @@ import { SchoolListItemComponent } from './school-list-item/school-list-item.com
   imports: [
     CommonModule,
     SchoolsRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     SchoolsPageComponent,

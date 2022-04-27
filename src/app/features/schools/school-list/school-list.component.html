@@ -1,10 +1,14 @@
+<form class="search-form">
+    <input [formControl]="searchControl" type="text" placeholder="Име на училище">
+</form>
+
 <table class="schools" *ngIf="!!schoolList">
     <tr class="header">
         <th class="town">Област</th>
         <th class="town">Населено място</th>
         <th class="school">Училище</th>
         <th class="roles">Роля</th>
-    </tr>    
+    </tr>
     <tr *ngFor="let school of schoolList">
         <td colspan="4">
             <app-school-list-item [school]="school"></app-school-list-item>
@@ -14,4 +18,4 @@
 
 <div *ngIf="!schoolList" class="loading">
     Зареждане...
-  </div>
+</div>

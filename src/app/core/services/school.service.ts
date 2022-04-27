@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -23,8 +23,17 @@ export class SchoolService {
     return this.http.post<ISchool>(`${apiUrl}/schools`, body, { withCredentials: true })
   }
 
-  loadSchoolList(): Observable<ISchool[]> {
+  loadSchoolList1(): Observable<ISchool[]> {
     return this.http.get<ISchool[]>(`${apiUrl}/schools`);
+  }
+ 
+  loadSchoolList(searchTerm: string = ''): Observable<ISchool[]> {
+    return this.http.get<ISchool[]>(`${apiUrl}/schools?name=${searchTerm}`, {
+      params: new HttpParams({
+        fromObject: {
+        }
+      })
+    });
   }
 
   loadSchoolById(id: string): Observable<ISchool> {

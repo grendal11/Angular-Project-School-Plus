@@ -1,3 +1,11 @@
+.search-form {
+    margin-bottom: 1rem;
+}
+
+.search-form input {
+    font-size: 1rem;
+}
+
 .schools {
     border: 2px solid var(--color-teal-dark);
 }

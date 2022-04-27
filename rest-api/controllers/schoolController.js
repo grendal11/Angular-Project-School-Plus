@@ -1,7 +1,16 @@
 const { schoolModel } = require('../models');
 
-function getSchools(req, res, next) {
+function getSchools1(req, res, next) {
     schoolModel.find()
+        .populate('teachers students')
+        .then(schools => res.json(schools))
+        .catch(next);
+}
+
+function getSchools(req, res, next) {
+    const name = req.query.name || '';
+
+    schoolModel.find({ schoolName: { $regex: name, $options: 'i' } })
         .populate('teachers students')
         .then(schools => res.json(schools))
         .catch(next);
