@@ -23,9 +23,9 @@ export class SchoolService {
     return this.http.post<ISchool>(`${apiUrl}/schools`, body, { withCredentials: true })
   }
 
-  loadSchoolList1(): Observable<ISchool[]> {
-    return this.http.get<ISchool[]>(`${apiUrl}/schools`);
-  }
+  // loadSchoolList(): Observable<ISchool[]> {
+  //   return this.http.get<ISchool[]>(`${apiUrl}/schools`);
+  // }
  
   loadSchoolList(searchTerm: string = ''): Observable<ISchool[]> {
     return this.http.get<ISchool[]>(`${apiUrl}/schools?name=${searchTerm}`, {

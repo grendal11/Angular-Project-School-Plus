@@ -1,0 +1,34 @@
+<div class="school-container" *ngIf="!!school">
+    <div class="school-name"> {{school.schoolName}} </div>
+
+    <div class="school-district">
+        <p>
+           Област: <span class="district">{{school.schoolDistrict}}</span>
+       </p>
+    </div>
+
+    <div class="school-town">
+        <p>
+           Населено място: <span class="town">{{school.schoolTown}}</span>
+       </p>
+    </div>
+
+    <div class="school-info">
+        <p>Учители: <span class="teachers-count">{{school.teachers.length}}</span></p>
+        <p>Ученици: <span class="students-count">{{school.students.length}}</span></p>
+    </div>
+
+    <!-- <div class="buttons">
+        <button *ngIf="(isLoggedIn$ | async)" class="comment-btn">
+            Добави коментар
+        </button>
+        <button *ngIf="(isLoggedIn$ | async)" class="subscribe-btn" [class.subscribe]="canSubscribe"
+            [class.unsubscribe]="!canSubscribe" (click)="canSubscribe ? handleSubscribe(event) : handleUnsubscribe(event)">
+            {{ canSubscribe ? 'Запиши се' : 'Отпиши се' }}
+        </button>
+    </div> -->
+</div>
+
+<div class="loading" *ngIf="!school">
+    Зареждане...
+</div>

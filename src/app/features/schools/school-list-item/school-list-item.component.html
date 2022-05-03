@@ -4,7 +4,9 @@
         <td class="town">{{school.schoolTown}}</td>
         <td class="school">
             {{school.schoolName}}
-            <i class="fa-solid fa-circle-info info"></i>
+            <a [routerLink]="['/schools', school._id]">
+                <i class="fa-solid fa-circle-info info"></i>
+            </a>
             <i *ngIf="(currentUser$ | async)?.role == 'teacher' && (currentUser$ | async).schoolId._id == school._id" class="fa-solid fa-pen-to-square edit-school"></i>
         </td>
         <td class="roles">

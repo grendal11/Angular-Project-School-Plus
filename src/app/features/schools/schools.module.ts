@@ -7,6 +7,7 @@ import { SchoolListComponent } from './school-list/school-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SchoolsNewPageComponent } from './schools-new-page/schools-new-page.component';
 import { SchoolListItemComponent } from './school-list-item/school-list-item.component';
+import { SchoolsDetailPageComponent } from './schools-detail-page/schools-detail-page.component';
 
 
 
@@ -16,7 +17,8 @@ import { SchoolListItemComponent } from './school-list-item/school-list-item.com
     SchoolsPageComponent,
     SchoolListComponent, 
     SchoolListItemComponent,
-    SchoolsNewPageComponent
+    SchoolsNewPageComponent,
+    SchoolsDetailPageComponent
   ],
   imports: [
     CommonModule,
