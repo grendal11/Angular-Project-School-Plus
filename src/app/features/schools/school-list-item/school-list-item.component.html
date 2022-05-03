@@ -11,11 +11,11 @@
         </td>
         <td class="roles">
            <div class="roles-container">
-            <a *ngIf="!(currentUser$ | async).role" class="teacher-role">
+            <a *ngIf="!(currentUser$ | async).role" class="teacher-role" (click)="handleAddTeacher(school)">
                 <i class="fa-solid fa-user-graduate"></i>
                 <span>Учител</span>
             </a>
-            <a *ngIf="!(currentUser$ | async).role" href="" class="student-role">
+            <a *ngIf="!(currentUser$ | async).role" class="student-role" (click)="handleAddStudent(school)">
                 <i class="fa-solid fa-user-large"></i>
                 <span>Ученик</span>
             </a>

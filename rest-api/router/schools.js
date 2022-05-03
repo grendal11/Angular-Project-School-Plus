@@ -8,9 +8,9 @@ const { schoolController } = require('../controllers');
 router.get('/', schoolController.getSchools);
 router.post('/', auth(), schoolController.createSchool);
 
-// router.get('/:eventId', eventController.getEvent);
+router.get('/:schoolId', schoolController.getSchool);
 // router.post('/:eventId', auth(), eventPostController.createEventPost);
-// router.put('/:eventId/subscribe', auth(), eventController.subscribe);
+router.put('/:schoolId/addteacher', auth(), schoolController.addTeacher);
 // router.put('/:eventId/unsubscribe', auth(), eventController.unsubscribe);
 // router.put('/:eventId/posts/:eventPostId', auth(), eventPostController.editEventPost);
 // router.delete('/:eventId/posts/:eventPostId', auth(), eventPostController.deleteEventPost);

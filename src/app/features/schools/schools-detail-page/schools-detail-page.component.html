@@ -1,21 +1,20 @@
 <div class="school-container" *ngIf="!!school">
     <div class="school-name"> {{school.schoolName}} </div>
 
-    <div class="school-district">
+    <div class="school-town">
         <p>
            Област: <span class="district">{{school.schoolDistrict}}</span>
        </p>
-    </div>
-
-    <div class="school-town">
-        <p>
-           Населено място: <span class="town">{{school.schoolTown}}</span>
-       </p>
+       <p>
+          Населено място: <span class="town">{{school.schoolTown}}</span>
+      </p>
     </div>
 
     <div class="school-info">
-        <p>Учители: <span class="teachers-count">{{school.teachers.length}}</span></p>
-        <p>Ученици: <span class="students-count">{{school.students.length}}</span></p>
+        <p>Събития: <span class="stats">0</span></p>
+        <p>Клубове: <span class="stats">0</span></p>
+        <p>Учители: <span class="stats">{{school.teachers.length}}</span></p>
+        <p>Ученици: <span class="stats">{{school.students.length}}</span></p>
     </div>
 
     <!-- <div class="buttons">

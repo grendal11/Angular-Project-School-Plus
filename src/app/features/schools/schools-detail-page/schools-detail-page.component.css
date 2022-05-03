@@ -20,6 +20,12 @@
     border-top-right-radius: var(--border-radius-big);
 }
 
+.school-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.6rem;
+}
+
 .school-info p {
     margin: 0.2rem;
 }
@@ -32,7 +38,7 @@
     justify-content: center;
 }
 
-.district, .town, .teachers-count, .students-count {
+.district, .town, .stats {
     font-weight: bold;
 }
 

@@ -1,11 +1,11 @@
-const { schoolModel } = require('../models');
+const { schoolModel, userModel } = require('../models');
 
-function getSchools1(req, res, next) {
-    schoolModel.find()
-        .populate('teachers students')
-        .then(schools => res.json(schools))
-        .catch(next);
-}
+// function getSchools(req, res, next) {
+//     schoolModel.find()
+//         .populate('teachers students')
+//         .then(schools => res.json(schools))
+//         .catch(next);
+// }
 
 function getSchools(req, res, next) {
     const name = req.query.name || '';
@@ -16,19 +16,14 @@ function getSchools(req, res, next) {
         .catch(next);
 }
 
-// function getEvent(req, res, next) {
-//     const { eventId } = req.params;
+function getSchool(req, res, next) {
+    const { schoolId } = req.params;
 
-//     schoolModel.findById(eventId)
-//         .populate({
-//             path: 'eventPosts',
-//             populate: {
-//                 path: 'userId'
-//             }
-//         })
-//         .then(event => res.json(event))
-//         .catch(next);
-// }
+    schoolModel.findById(schoolId)
+        .populate('teachers students')
+        .then(school => res.json(school))
+        .catch(next);
+}
 
 function createSchool(req, res, next) {
     const { schoolName, schoolDistrict, schoolTown } = req.body;
@@ -39,23 +34,24 @@ function createSchool(req, res, next) {
         .catch(next);
 }
 
-// function subscribe(req, res, next) {
-//     const eventId = req.params.eventId;
-//     const { _id: userId } = req.user;
-//     schoolModel.findByIdAndUpdate({ _id: eventId }, { $addToSet: { subscribers: userId } }, { new: true })
-//         .populate({
-//             path: 'subscribers',
-//             populate: {
-//                 path: 'userId'
-//             }
-//         })
-//         .then(updatedEvent => {
-//             res.status(200).json(updatedEvent)
-//         })
-//         .catch(next);
-// }
+function addTeacher(req, res, next) {
+    const schoolId = req.params.schoolId;
+    const { _id: userId } = req.user;
+    schoolModel.findByIdAndUpdate({ _id: schoolId }, { $addToSet: { teachers: userId } }, { new: true })
+        .populate({
+            path: 'teachers',
+            populate: {
+                path: 'userId'
+            }
+        })
+        .then(updatedSchool => {
+            userModel.findByIdAndUpdate({ _id: userId }, { schoolId: updatedSchool._id, role: "teacher" }, { runValidators: true, new: true })
+            .then(() => { res.status(200).json(updatedSchool)})           
+        })
+        .catch(next);
+}
 
-// function unsubscribe(req, res, next) {
+// function removeTeacher(req, res, next) {
 //     const eventId = req.params.eventId;
 //     const { _id: userId } = req.user;
 //     schoolModel.findByIdAndUpdate({ _id: eventId }, { $pull: { subscribers: userId } }, { new: true })
@@ -74,7 +70,7 @@ function createSchool(req, res, next) {
 module.exports = {
     getSchools,
     createSchool,
-    // getEvent,
-    // subscribe,
+    getSchool,
+    addTeacher,
     // unsubscribe
 }
